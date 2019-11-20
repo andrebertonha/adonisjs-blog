@@ -3,6 +3,8 @@
 const Route = use('Route')
 
 Route.post('users', 'UserController.store')
+Route.post('users', 'UserController.update')
+
 Route.post('sessions', 'SessionController.store')
 
 Route.group(() => {
