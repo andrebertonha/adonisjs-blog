@@ -14,10 +14,10 @@ Route.resource('/posts', 'PostController')
   .middleware(['auth', 'is:(administrator || moderator)'])
 
 Route.get('/posts', 'PostController.index')
-  .middleware(['auth', 'can:read_posts'])
+  .middleware(['auth', 'can:(read_post || read_private_post)'])
 
 Route.get('/posts/:id', 'PostController.show')
-  .middleware(['auth', 'can:read_posts'])
+  .middleware(['auth', 'can:(read_post || read_private_post)'])
 
 Route.resource('permissions', 'PermissionController').apiOnly().middleware('auth')
 
