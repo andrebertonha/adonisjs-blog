@@ -8,3 +8,5 @@ Route.post('sessions', 'SessionController.store')
 Route.group(() => {
   Route.resource('posts', 'PostController').apiOnly()
 }).middleware(['auth'])
+
+Route.resource('permissions', 'PermissionController').apiOnly().middleware('auth')
