@@ -30,7 +30,7 @@ class PermissionController {
   async destroy ({ params }) {
     const permission = await Permission.findOrFail(params.id)
 
-    permission.delete()
+    await permission.delete()
   }
 }
 
