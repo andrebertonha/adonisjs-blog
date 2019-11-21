@@ -16,7 +16,7 @@ class PostController {
     const user = await auth.getUser()
 
     if (await user.can('read_private_post')) {
-      const posts = await Post.query().with('user').fetch()
+      const posts = await Post.all()
       return posts
     }
 
